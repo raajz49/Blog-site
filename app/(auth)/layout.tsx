@@ -10,8 +10,9 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen">
-      <div className="w-1/2 flex flex-col items-center justify-center px-8 py-6">
+    <div className="flex min-h-screen flex-col md:flex-row">
+      {/* Main Content */}
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center px-8 py-6">
         <header className="w-full mb-8 ">
           <nav className="flex gap-4 items-center">
             <BrainIcon className="w-6 h-6 text-black dark:text-white" />
@@ -43,8 +44,9 @@ export default function AuthLayout({
         </footer>
       </div>
 
+      {/* Image Section */}
       <div
-        className="w-1/2 hidden md:block bg-cover bg-center"
+        className="hidden md:block md:w-1/2 bg-cover bg-center"
         style={{
           backgroundImage: "url('/auth.jpeg')",
         }}

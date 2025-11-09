@@ -110,7 +110,6 @@ export default function CreatePostPage() {
                   formats={formats}
                   placeholder="Write your post content here..."
                   className="py-4"
-                  style={{ height: "400px", marginBottom: "42px" }}
                 />
               </div>
               {errors.content && (

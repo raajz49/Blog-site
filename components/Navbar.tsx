@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import { UserDropdown } from "./dropdownComponents/UserDropdown";
 import { ProjectsDropdown } from "./dropdownComponents/ProjectDropdown";
-import { BrainIcon, UserIcon } from "lucide-react";
+import { BrainIcon, UserIcon, Menu } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { ModeToggle } from "./toggle";
 
 export function Navbar() {
   const { isAuthenticated, user } = useAuth();
-
   if (!isAuthenticated) return null;
 
   return (
@@ -22,13 +21,13 @@ export function Navbar() {
 
             <Link href="/" className="flex flex-col">
               <span className="text-xl font-bold">MyBlog</span>
-              <span className="text-xs ">Blogging Intelligence</span>
+              <span className="text-xs">Blogging Intelligence</span>
             </Link>
           </nav>
           <ModeToggle />
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6">
           <Link
             href="https://www.rajkoirala.com.np/"
             target="_blank"
@@ -65,7 +64,7 @@ export function Navbar() {
               </AvatarFallback>
             )}
           </Avatar>
-          <span className="text-sm font-medium text-muted-foreground">
+          <span className="hidden sm:block text-sm font-medium text-muted-foreground">
             {user?.name}
           </span>
           <UserDropdown />
